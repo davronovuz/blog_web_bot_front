@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yangiliklar Sayti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Yangiliklar Sayti</h1>
+            <nav>
+                <a href="index.html">Bosh Sahifa</a>
+                <a href="news.html">Yangiliklar</a>
+                <a href="#bot">Telegram Bot</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>So'nggi Yangiliklar bilan Tanishing</h2>
+            <p>Dunyo bo'ylab eng muhim voqealarni birinchi bo'lib bilib oling!</p>
+            <a href="news.html" class="btn">Yangiliklarni Ko'rish</a>
+        </div>
+    </section>
+
+    <section id="news" class="news-grid container">
+        <!-- News cards will be dynamically added here -->
+    </section>
+
+    <section id="bot" class="bot-section container">
+        <h2>Telegram Bot orqali Yangiliklarni Kuzating</h2>
+        <p>Eng so'nggi yangiliklarni Telegram orqali oling!</p>
+        <input type="text" id="chatId" placeholder="Telegram Chat ID kiriting">
+        <button onclick="subscribeToBot()" class="btn">Obuna bo'lish</button>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Yangiliklar Sayti. Barcha huquqlar himoyalangan.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

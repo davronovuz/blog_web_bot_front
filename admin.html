@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Admin Panel</h1>
+            <nav>
+                <a href="index.html">Bosh Sahifa</a>
+                <a href="news.html">Yangiliklar</a>
+                <a href="index.html#bot">Telegram Bot</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="admin-panel container">
+        <h2>Yangilik Qo'shish</h2>
+        <form id="newsForm">
+            <div class="form-group">
+                <label for="newsTitle">Sarlavha</label>
+                <input type="text" id="newsTitle" placeholder="Yangilik sarlavhasi" required>
+            </div>
+            <div class="form-group">
+                <label for="newsDescription">Tavsif</label>
+                <textarea id="newsDescription" placeholder="Yangilik tavsifi" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="newsImage">Rasm URL</label>
+                <input type="url" id="newsImage" placeholder="Rasm URL manzili">
+            </div>
+            <button type="submit" class="btn">Yangilik Qo'shish</button>
+        </form>
+
+        <h2>Mavjud Yangiliklar</h2>
+        <div id="adminNewsList" class="news-grid">
+            <!-- Admin news list will be dynamically added here -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Yangiliklar Sayti. Barcha huquqlar himoyalangan.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>
