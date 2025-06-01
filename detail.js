@@ -25,46 +25,21 @@ const newsData = [
     }
 ];
 
-function renderNews(containerSelector, filterCategory = 'all') {
-    const newsGrid = document.querySelector(containerSelector);
-    if (!newsGrid) return;
-
-    newsGrid.innerHTML = '';
-    const filteredNews = filterCategory === 'all' 
-        ? newsData 
-        : newsData.filter(news => news.category === filterCategory);
-
-    filteredNews.forEach((news, index) => {
-        const newsCard = document.createElement('div');
-        newsCard.className = 'news-card';
-        newsCard.style.setProperty('--i', index);
-        newsCard.innerHTML = `
-            <img src="${news.image}" alt="${news.title}">
-            <div class="news-card-content">
-                <h3>${news.title}</h3>
-                <p>${news.description.substring(0, 100)}...</p>
-                <p class="date">${news.date}</p>
-            </div>
-        `;
-        newsCard.addEventListener('click', () => {
-            window.location.href = `detail.html?id=${news.id}`;
-        });
-        newsGrid.appendChild(newsCard);
-    });
-}
-
-function subscribeToBot() {
-    const chatId = document.getElementById('chatId')?.value;
-    if (chatId) {
-        // Replace with actual Telegram bot API integration
-        alert(`Siz ${chatId} ID orqali obuna bo'ldingiz!`);
-        document.getElementById('chatId').value = '';
-    } else {
-        alert('Iltimos, Telegram Chat ID kiriting!');
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const newsId = parseInt(urlParams.get('id'));
+    const news = newsData.find(item => item.id === newsId);
+
+    if (news) {
+        document.getElementById('newsTitle').textContent = news.title;
+        document.getElementById('newsImage').src = news.image;
+        document.getElementById('newsImage').alt = news.title;
+        document.getElementById('newsDate').textContent = news.date;
+        document.getElementById('newsDescription').textContent = news.description;
+    } else {
+        document.getElementById('newsDetail').innerHTML = '<p>Yangilik topilmadi!</p>';
+    }
+
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
     
@@ -74,6 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
             ? '<i class="fas fa-times"></i>' 
             : '<i class="fas fa-bars"></i>';
     });
-
-    renderNews('.news-grid');
 });

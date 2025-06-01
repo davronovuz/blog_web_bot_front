@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Bog'lanish</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="container">
-            <h1 class="logo">Admin Panel</h1>
+            <h1 class="logo">Yangiliklar Sayti</h1>
             <nav>
                 <a href="index.html">Bosh Sahifa</a>
                 <a href="news.html">Yangiliklar</a>
@@ -26,36 +26,24 @@
         </div>
     </header>
 
-    <section class="admin-panel container">
-        <h2>Yangilik Qo'shish</h2>
-        <form id="newsForm">
+    <section class="contact-section container">
+        <h2>Biz bilan Bog'laning</h2>
+        <p>Savollaringiz yoki takliflaringiz bo'lsa, quyidagi forma orqali bizga xabar yuboring!</p>
+        <form id="contactForm">
             <div class="form-group">
-                <label for="newsTitle">Sarlavha</label>
-                <input type="text" id="newsTitle" placeholder="Yangilik sarlavhasi" required>
+                <label for="contactName">Ism</label>
+                <input type="text" id="contactName" placeholder="Ismingizni kiriting" required>
             </div>
             <div class="form-group">
-                <label for="newsDescription">Tavsif</label>
-                <textarea id="newsDescription" placeholder="Yangilik tavsifi" required></textarea>
+                <label for="contactEmail">Email</label>
+                <input type="email" id="contactEmail" placeholder="Email manzilingiz" required>
             </div>
             <div class="form-group">
-                <label for="newsImage">Rasm URL</label>
-                <input type="url" id="newsImage" placeholder="Rasm URL manzili">
+                <label for="contactMessage">Xabar</label>
+                <textarea id="contactMessage" placeholder="Xabaringizni kiriting" required></textarea>
             </div>
-            <div class="form-group">
-                <label for="newsCategory">Kategoriya</label>
-                <select id="newsCategory" required>
-                    <option value="world">Dunyo</option>
-                    <option value="tech">Texnologiya</option>
-                    <option value="sports">Sport</option>
-                </select>
-            </div>
-            <button type="submit" class="btn">Yangilik Qo'shish</button>
+            <button type="submit" class="btn">Yuborish</button>
         </form>
-
-        <h2>Mavjud Yangiliklar</h2>
-        <div id="adminNewsList" class="news-grid">
-            <!-- Admin news list will be dynamically added here -->
-        </div>
     </section>
 
     <footer>
@@ -69,6 +57,6 @@
         </div>
     </footer>
 
-    <script src="admin.js"></script>
+    <script src="contact.js"></script>
 </body>
 </html>

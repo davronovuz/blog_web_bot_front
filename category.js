@@ -53,18 +53,19 @@ function renderNews(containerSelector, filterCategory = 'all') {
     });
 }
 
-function subscribeToBot() {
-    const chatId = document.getElementById('chatId')?.value;
-    if (chatId) {
-        // Replace with actual Telegram bot API integration
-        alert(`Siz ${chatId} ID orqali obuna bo'ldingiz!`);
-        document.getElementById('chatId').value = '';
-    } else {
-        alert('Iltimos, Telegram Chat ID kiriting!');
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const category = button.dataset.category;
+            renderNews('.news-grid', category);
+        });
+    });
+
+    renderNews('.news-grid', 'all');
+
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
     
@@ -74,6 +75,4 @@ document.addEventListener('DOMContentLoaded', () => {
             ? '<i class="fas fa-times"></i>' 
             : '<i class="fas fa-bars"></i>';
     });
-
-    renderNews('.news-grid');
 });

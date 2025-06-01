@@ -119,6 +119,7 @@ nav a:hover {
     opacity: 0;
     animation: fadeIn 0.5s forwards;
     animation-delay: calc(var(--i) * 0.2s);
+    cursor: pointer;
 }
 
 .news-card:hover {
@@ -152,6 +153,42 @@ nav a:hover {
 .news-card-content .date {
     font-size: 0.9rem;
     color: #888;
+}
+
+/* News Detail */
+.news-detail {
+    margin: 100px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in;
+}
+
+.news-detail img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.news-detail h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #1e3c72;
+}
+
+.news-detail .date {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.news-detail p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
 }
 
 /* Bot Section */
@@ -191,6 +228,50 @@ nav a:hover {
     padding: 12px 24px;
 }
 
+/* Contact Section */
+.contact-section {
+    margin: 100px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1e3c72;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+/* Category Section */
+.category-section {
+    margin: 100px auto;
+}
+
+.category-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.category-btn.active, .category-btn:hover {
+    background: #2a5298;
+    color: white;
+}
+
 /* Admin Panel */
 .admin-panel {
     margin: 100px auto;
@@ -212,7 +293,8 @@ nav a:hover {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -227,7 +309,8 @@ nav a:hover {
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
     border-color: #2a5298;
     outline: none;
 }
@@ -306,5 +389,9 @@ footer {
 
     .news-grid {
         grid-template-columns: 1fr;
+    }
+
+    .news-detail {
+        padding: 20px;
     }
 }
